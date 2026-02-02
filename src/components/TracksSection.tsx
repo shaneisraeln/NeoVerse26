@@ -64,18 +64,7 @@ export default function TracksSection() {
   const ROTATION_RANGE = 32.5;
   const HALF_ROTATION_RANGE = 32.5 / 2;
 
-  interface TiltCardProps {
-    track: {
-      id: number;
-      icon: React.ComponentType<any>;
-      title: string;
-      description: string;
-      color: string;
-    };
-    index: number;
-  }
-
-  const TiltCard: React.FC<TiltCardProps> = ({ track, index }) => {
+  const TiltCard = ({ track, index }: { track: any; index: number }) => {
     const cardRef = useRef(null);
     const cardX = useMotionValue(0);
     const cardY = useMotionValue(0);
