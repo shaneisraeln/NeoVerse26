@@ -65,14 +65,14 @@ export default function TracksSection() {
   const HALF_ROTATION_RANGE = 32.5 / 2;
 
   const TiltCard = ({ track, index }: { track: any; index: number }) => {
-    const cardRef = useRef(null);
+    const cardRef = useRef<HTMLDivElement>(null);
     const cardX = useMotionValue(0);
     const cardY = useMotionValue(0);
     const xSpring = useSpring(cardX);
     const ySpring = useSpring(cardY);
     const transform = useMotionTemplate`rotateX(${xSpring}deg) rotateY(${ySpring}deg)`;
 
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
       if (!cardRef.current) return;
       const rect = cardRef.current.getBoundingClientRect();
       const width = rect.width;
@@ -98,10 +98,10 @@ export default function TracksSection() {
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         style={{
-          transformStyle: "preserve-3d" as const,
+          transformStyle: "preserve-3d",
           transform,
           '--item-color': track.color,
-        } as React.CSSProperties & { '--item-color': string }}
+        } as any}
         className="gallery-item"
       >
         <div 
