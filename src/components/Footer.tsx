@@ -24,10 +24,17 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-purple-400 flex-shrink-0 mt-1" />
-                <p className="text-gray-400 text-sm">
-                  Coimbatore Institute of Technology<br />
-                  Coimbatore, Tamil Nadu
-                </p>
+                <div>
+                  <a 
+                    href="https://maps.app.goo.gl/oXDPwZKL2MhkWShR9" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-gray-400 text-sm hover:text-purple-300 transition-colors underline"
+                  >
+                    Coimbatore Institute of Technology<br />
+                    Coimbatore, Tamil Nadu
+                  </a>
+                </div>
               </div>
             </div>
           </div>

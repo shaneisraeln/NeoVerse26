@@ -10,9 +10,9 @@ import BackgroundEffect from '../components/BackgroundEffect';
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-black relative">
+    <div className="min-h-screen bg-black relative overflow-x-hidden">
       <BackgroundEffect />
-      <div className="relative z-10">
+      <div className="relative z-10 overflow-x-hidden">
         <Navbar />
         <HeroSection />
         <AboutSection />

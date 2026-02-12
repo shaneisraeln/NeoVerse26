@@ -36,8 +36,8 @@ export default function RegistrationSection() {
   ];
 
   return (
-    <section id="register" className="py-20 px-6 bg-transparent">
-      <div className="max-w-6xl mx-auto">
+    <section id="register" className="py-20 px-6 bg-transparent overflow-x-hidden">
+      <div className="max-w-6xl mx-auto overflow-x-hidden">
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-black text-white mb-6 drop-shadow-[0_0_30px_rgba(168,85,247,0.5)]">
             Registration Details

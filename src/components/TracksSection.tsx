@@ -3,7 +3,7 @@ import { Code, Globe, Shield, Brain, Database } from 'lucide-react';
 import { motion, useScroll, useTransform, useMotionTemplate, useMotionValue, useSpring } from 'framer-motion';
 
 export default function TracksSection() {
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
@@ -49,7 +49,7 @@ export default function TracksSection() {
       id: 6,
       icon: Database,
       title: 'Open Innovation',
-      description: 'Teams will choose their own problem statement within the selected domain, The problem must involve an AI-based solution, Identification of ethical risks and mitigation strategies is mandatory',
+      description: 'Teams will choose their own problem statement within the selected domain. The problem must involve an AI-based solution. Identification of ethical risks and mitigation strategies is mandatory.',
       color: '#f59e0b'
     }
   ];
@@ -58,6 +58,8 @@ export default function TracksSection() {
   const ITEM_WIDTH = 350;
   const GAP = 28;
   const totalDistance = (tracks.length - 1) * (ITEM_WIDTH + GAP);
+  
+  // Direct scroll animation - no spring, immediate response
   const x = useTransform(scrollYProgress, [0, 1], [0, -totalDistance]);
 
   // Tilt animation constants
@@ -153,8 +155,8 @@ export default function TracksSection() {
   return (
     <div id="tracks-example">
       {/* Intro Section */}
-      <section className="py-20 px-6 bg-transparent">
-        <div className="text-center mb-16">
+      <section className="py-12 px-6 bg-transparent">
+        <div className="text-center mb-12">
           <h2 className="text-5xl md:text-6xl font-black text-white mb-6 drop-shadow-[0_0_30px_rgba(168,85,247,0.5)]">
             Idea Tracks
           </h2>
@@ -168,7 +170,10 @@ export default function TracksSection() {
       {/* Horizontal Scroll Container */}
       <div ref={containerRef} className="scroll-container">
         <div className="sticky-wrapper">
-          <motion.div className="gallery" style={{ x }}>
+          <motion.div 
+            className="gallery" 
+            style={{ x }}
+          >
             {tracks.map((track, index) => (
               <TiltCard key={track.id} track={track} index={index} />
             ))}
@@ -176,44 +181,35 @@ export default function TracksSection() {
         </div>
       </div>
 
-      {/* Outro Section */}
-      <section className="py-20 px-6 bg-transparent">
-        <div className="text-center">
-          <h2 className="text-5xl md:text-6xl font-black text-white mb-6 drop-shadow-[0_0_30px_rgba(168,85,247,0.5)]">
-            Ready to Innovate?
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-6 shadow-[0_0_20px_rgba(168,85,247,0.6)]"></div>
-          <p className="text-lg text-purple-100 mb-8">
-            Choose your track and start building the future
-          </p>
-          <button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-bold px-12 py-6 text-lg rounded-lg shadow-[0_0_30px_rgba(168,85,247,0.6)] hover:shadow-[0_0_40px_rgba(168,85,247,0.8)] transition-all border-2 border-purple-400/50">
-            Register Now
-          </button>
-        </div>
-      </section>
+      {/* No spacing - direct transition */}
 
       <style dangerouslySetInnerHTML={{
         __html: `
           #tracks-example {
             height: auto;
             overflow: visible;
+            width: 100%;
+            max-width: 100vw;
           }
 
           .scroll-container {
             height: 300vh;
             position: relative;
+            width: 100%;
+            max-width: 100vw;
           }
 
           .sticky-wrapper {
             position: sticky;
             top: 0;
             height: 100vh;
-            width: 350px;
-            margin: 0 auto;
+            width: 100%;
+            max-width: 100vw;
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            overflow: visible;
+            overflow: hidden;
+            padding-left: calc(50vw - 175px);
           }
 
           .gallery {

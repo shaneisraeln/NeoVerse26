@@ -53,8 +53,8 @@ export default function SponsorsSection() {
   ];
 
   return (
-    <section id="sponsors-details" className="py-20 px-6 bg-transparent">
-      <div className="max-w-7xl mx-auto">
+    <section id="sponsors-details" className="py-20 px-6 bg-transparent overflow-x-hidden">
+      <div className="max-w-7xl mx-auto overflow-x-hidden">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-black text-white mb-6 drop-shadow-[0_0_30px_rgba(168,85,247,0.5)]">
