@@ -56,11 +56,17 @@ export default function HeroSection() {
         </div>
 
         {/* CTA Button */}
-        <button 
-          className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-black px-12 py-6 text-lg rounded-lg shadow-[0_0_40px_rgba(168,85,247,0.6)] hover:shadow-[0_0_60px_rgba(168,85,247,0.8)] transition-all hover:scale-105 border-2 border-purple-400/50 cursor-pointer"
+        <a 
+          href="https://unstop.com/p/neoverse-26-coimbatore-institute-of-technology-cit-coimbatore-1634365"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          Register Now
-        </button>
+          <button 
+            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-black px-12 py-6 text-lg rounded-lg shadow-[0_0_40px_rgba(168,85,247,0.6)] hover:shadow-[0_0_60px_rgba(168,85,247,0.8)] transition-all hover:scale-105 border-2 border-purple-400/50 cursor-pointer"
+          >
+            Register Now
+          </button>
+        </a>
 
         {/* Organizer */}
         <p className="mt-8 text-purple-200">

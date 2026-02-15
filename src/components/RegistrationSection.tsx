@@ -93,11 +93,17 @@ export default function RegistrationSection() {
         </div>
 
         <div className="text-center mb-8">
-          <button 
-            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-bold px-12 py-6 text-lg rounded-lg shadow-[0_0_30px_rgba(168,85,247,0.6)] hover:shadow-[0_0_40px_rgba(168,85,247,0.8)] transition-all border-2 border-purple-400/50 hover:scale-105 cursor-pointer"
+          <a 
+            href="https://unstop.com/p/neoverse-26-coimbatore-institute-of-technology-cit-coimbatore-1634365"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Register Now
-          </button>
+            <button 
+              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-bold px-12 py-6 text-lg rounded-lg shadow-[0_0_30px_rgba(168,85,247,0.6)] hover:shadow-[0_0_40px_rgba(168,85,247,0.8)] transition-all border-2 border-purple-400/50 hover:scale-105 cursor-pointer"
+            >
+              Register Now
+            </button>
+          </a>
         </div>
 
         {/* Important Dates */}
