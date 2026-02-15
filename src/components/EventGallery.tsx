@@ -1,5 +1,11 @@
 import { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
+import gallery1 from '../assets/gallery/gallery-1.jpg';
+import gallery2 from '../assets/gallery/gallery-2.jpg';
+import gallery3 from '../assets/gallery/gallery-3.jpg';
+import gallery4 from '../assets/gallery/gallery-4.jpg';
+import gallery5 from '../assets/gallery/gallery-5.jpg';
+import gallery6 from '../assets/gallery/gallery-6.jpg';
 
 interface GalleryImage {
   id: string;
@@ -8,27 +14,21 @@ interface GalleryImage {
 }
 
 export default function EventGallery() {
-  const [images, setImages] = useState<GalleryImage[]>([]);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const defaultImages: GalleryImage[] = [
+    { id: '1', url: gallery1, alt: 'NeoVerse Event 1' },
+    { id: '2', url: gallery2, alt: 'NeoVerse Event 2' },
+    { id: '3', url: gallery3, alt: 'NeoVerse Event 3' },
+    { id: '4', url: gallery4, alt: 'NeoVerse Event 4' },
+    { id: '5', url: gallery5, alt: 'NeoVerse Event 5' },
+    { id: '6', url: gallery6, alt: 'NeoVerse Event 6' }
+  ];
 
+  const [images] = useState<GalleryImage[]>(defaultImages);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  // Clear old localStorage data on mount to ensure new images are used
   useEffect(() => {
-    // Load images from localStorage
-    const savedImages = localStorage.getItem('galleryImages');
-    if (savedImages) {
-      setImages(JSON.parse(savedImages));
-    } else {
-      // Default placeholder images
-      setImages([
-        { id: '1', url: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800', alt: 'Hackathon Event 1' },
-        { id: '2', url: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800', alt: 'Hackathon Event 2' },
-        { id: '3', url: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800', alt: 'Hackathon Event 3' },
-        { id: '4', url: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800', alt: 'Hackathon Event 4' },
-        { id: '5', url: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800', alt: 'Hackathon Event 5' },
-        { id: '6', url: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800', alt: 'Hackathon Event 6' }
-      ]);
-    }
-    setIsLoading(false);
+    localStorage.removeItem('galleryImages');
   }, []);
 
   const openLightbox = (imageUrl: string) => {
@@ -38,20 +38,6 @@ export default function EventGallery() {
   const closeLightbox = () => {
     setSelectedImage(null);
   };
-
-  if (isLoading) {
-    return (
-      <section className="py-20 px-6 bg-transparent">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="text-purple-300">Loading gallery...</div>
-        </div>
-      </section>
-    );
-  }
-
-  if (images.length === 0) {
-    return null;
-  }
 
   return (
     <section className="py-20 px-6 bg-transparent">

@@ -25,7 +25,7 @@ export default function SDCSection() {
   ];
 
   return (
-    <section className="py-20 px-6 bg-transparent">
+    <section className="min-h-screen flex items-center justify-center py-20 px-6 bg-transparent">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-5xl md:text-6xl font-black text-white mb-6 drop-shadow-[0_0_30px_rgba(168,85,247,0.5)]">
@@ -34,18 +34,16 @@ export default function SDCSection() {
           <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-8 shadow-[0_0_20px_rgba(168,85,247,0.6)]"></div>
         </div>
 
-        <div className="max-w-4xl mx-auto mb-12">
-          <div className="bg-white/5 backdrop-blur-md border-2 border-purple-500/40 rounded-lg p-8 shadow-[0_0_30px_rgba(168,85,247,0.3)]">
-            <p className="text-lg text-purple-100 leading-relaxed mb-4">
-              The <span className="font-bold text-white">Student Developers Cell (SDC)</span> is a student-run technical club at <span className="font-bold text-blue-300">Coimbatore Institute of Technology</span>, dedicated to fostering a vibrant community of developers, innovators, and tech enthusiasts.
-            </p>
-            <p className="text-lg text-purple-100 leading-relaxed mb-4">
-              We focus on empowering students through hands-on development experience, organizing hackathons, conducting technical workshops, and creating platforms for innovation. SDC is where ideas transform into reality, and students grow into skilled builders and problem solvers.
-            </p>
-            <p className="text-lg text-purple-100 leading-relaxed">
-              From beginner-friendly coding sessions to advanced tech initiatives, SDC supports every student's journey in technology. We believe in learning by building, collaborating with peers, and making a real-world impact through code.
-            </p>
-          </div>
+        <div className="max-w-4xl mx-auto mb-12 text-center">
+          <p className="text-lg text-purple-100 leading-relaxed mb-4">
+            The <span className="font-bold text-white">Student Developers Cell (SDC)</span> is a student-run technical club at <span className="font-bold text-blue-300">Coimbatore Institute of Technology</span>, dedicated to fostering a vibrant community of developers, innovators, and tech enthusiasts.
+          </p>
+          <p className="text-lg text-purple-100 leading-relaxed mb-4">
+            We focus on empowering students through hands-on development experience, organizing hackathons, conducting technical workshops, and creating platforms for innovation. SDC is where ideas transform into reality, and students grow into skilled builders and problem solvers.
+          </p>
+          <p className="text-lg text-purple-100 leading-relaxed">
+            From beginner-friendly coding sessions to advanced tech initiatives, SDC supports every student's journey in technology. We believe in learning by building, collaborating with peers, and making a real-world impact through code.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

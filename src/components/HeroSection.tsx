@@ -1,4 +1,3 @@
-import { Button } from './ui/button';
 import { Calendar, MapPin } from 'lucide-react';
 
 export default function HeroSection() {
@@ -46,7 +45,7 @@ export default function HeroSection() {
           <div className="flex flex-wrap items-center justify-center gap-6 mb-8 text-white">
             <div className="flex items-center gap-2">
               <Calendar className="w-5 h-5 text-purple-300" />
-              <span className="font-semibold tracking-wide">March 14-15, 2025</span>
+              <span className="font-semibold tracking-wide">March 7-8, 2025</span>
             </div>
             <div className="w-px h-6 bg-purple-400/50"></div>
             <div className="flex items-center gap-2">
@@ -57,12 +56,11 @@ export default function HeroSection() {
         </div>
 
         {/* CTA Button */}
-        <Button 
-          size="lg" 
-          className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-black px-12 py-6 text-lg rounded-lg shadow-[0_0_40px_rgba(168,85,247,0.6)] hover:shadow-[0_0_60px_rgba(168,85,247,0.8)] transition-all hover:scale-105 border-2 border-purple-400/50"
+        <button 
+          className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-black px-12 py-6 text-lg rounded-lg shadow-[0_0_40px_rgba(168,85,247,0.6)] hover:shadow-[0_0_60px_rgba(168,85,247,0.8)] transition-all hover:scale-105 border-2 border-purple-400/50 cursor-pointer"
         >
           Register Now
-        </Button>
+        </button>
 
         {/* Organizer */}
         <p className="mt-8 text-purple-200">

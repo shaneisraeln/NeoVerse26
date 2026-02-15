@@ -1,5 +1,4 @@
-import { Button } from './ui/button';
-import { Users, Clock, Wallet, Award, CheckCircle, FileText, Calendar } from 'lucide-react';
+import { Users, Clock, Wallet, CheckCircle, FileText, Calendar } from 'lucide-react';
 
 export default function RegistrationSection() {
   const details = [
@@ -11,7 +10,7 @@ export default function RegistrationSection() {
     {
       icon: Users,
       title: 'Team Size',
-      description: '2-4 members per team. Solo participants can team up at the event'
+      description: '2-4 members per team.'
     },
     {
       icon: Clock,
@@ -21,7 +20,7 @@ export default function RegistrationSection() {
     {
       icon: Wallet,
       title: 'Registration Fee',
-      description: 'Early Bird: ₹400/person • Regular: ₹500/person'
+      description: '₹300/person'
     },
     {
       icon: CheckCircle,
@@ -31,41 +30,37 @@ export default function RegistrationSection() {
     {
       icon: FileText,
       title: 'What You Get',
-      description: '₹30K prizes, swag, certificates, workshops & networking'
+      description: '₹30K prizes, certificates & networking'
     }
   ];
 
   const importantDates = [
     {
       icon: Calendar,
-      label: 'Early Bird Registration',
-      date: 'Feb 8 - 22, 2025',
-      highlight: false
+      label: 'Registration Begins',
+      date: 'Feb 16 2025'
     },
     {
       icon: Calendar,
-      label: 'Regular Registration',
-      date: 'Feb 23 - Mar 5, 2025',
-      highlight: true
+      label: 'Registration Ends',
+      date: 'Feb 24 2025'
     },
     {
       icon: Calendar,
       label: 'Team Shortlisting',
-      date: 'March 10, 2025',
-      highlight: false
+      date: 'March 01 2025'
     },
     {
       icon: Calendar,
       label: 'Hackathon Event',
-      date: 'March 14-15, 2025',
-      highlight: true
+      date: 'March 07 2025'
     }
   ];
 
   return (
-    <section id="register" className="py-20 px-6 bg-transparent overflow-x-hidden">
+    <section id="register" className="min-h-screen flex items-center justify-center py-20 px-6 bg-transparent overflow-x-hidden">
       <div className="max-w-6xl mx-auto overflow-x-hidden">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2 className="text-5xl md:text-6xl font-black text-white mb-6 drop-shadow-[0_0_30px_rgba(168,85,247,0.5)]">
             Registration Details
           </h2>
@@ -75,7 +70,7 @@ export default function RegistrationSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {details.map((detail, index) => {
             const Icon = detail.icon;
             return (
@@ -97,40 +92,31 @@ export default function RegistrationSection() {
           })}
         </div>
 
-        <div className="text-center mb-12">
-          <Button 
-            size="lg"
-            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-bold px-12 py-6 text-lg rounded-lg shadow-[0_0_30px_rgba(168,85,247,0.6)] hover:shadow-[0_0_40px_rgba(168,85,247,0.8)] transition-all border-2 border-purple-400/50 hover:scale-105"
+        <div className="text-center mb-8">
+          <button 
+            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-bold px-12 py-6 text-lg rounded-lg shadow-[0_0_30px_rgba(168,85,247,0.6)] hover:shadow-[0_0_40px_rgba(168,85,247,0.8)] transition-all border-2 border-purple-400/50 hover:scale-105 cursor-pointer"
           >
             Register Now
-          </Button>
+          </button>
         </div>
 
         {/* Important Dates */}
-        <div className="bg-white/5 backdrop-blur-md border-2 border-purple-500/40 rounded-lg p-8 shadow-[0_0_30px_rgba(168,85,247,0.3)]">
-          <h3 className="text-3xl font-bold text-white mb-8 text-center">Important Dates</h3>
+        <div className="bg-white/5 backdrop-blur-md border-2 border-purple-500/40 rounded-lg p-6 shadow-[0_0_30px_rgba(168,85,247,0.3)]">
+          <h3 className="text-2xl font-bold text-white mb-6 text-center">Important Dates</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {importantDates.map((item, index) => {
               const Icon = item.icon;
               return (
                 <div 
                   key={index}
-                  className={`flex items-center gap-4 p-4 rounded-lg transition-all ${
-                    item.highlight 
-                      ? 'bg-gradient-to-r from-purple-600/30 to-blue-600/30 border-2 border-purple-400/50' 
-                      : 'bg-white/5 border border-purple-500/30'
-                  }`}
+                  className="flex items-center gap-4 p-6 rounded-lg bg-white/5 border-2 border-purple-500/40 hover:border-purple-400/60 hover:bg-white/10 transition-all duration-300"
                 >
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 ${
-                    item.highlight 
-                      ? 'bg-gradient-to-br from-purple-500 to-blue-500 shadow-[0_0_20px_rgba(168,85,247,0.6)]' 
-                      : 'bg-purple-500/20'
-                  }`}>
-                    <Icon className="w-6 h-6 text-white" />
+                  <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-[0_0_20px_rgba(168,85,247,0.6)]">
+                    <Icon className="w-7 h-7 text-white" />
                   </div>
-                  <div>
-                    <p className="text-sm text-purple-200 mb-1">{item.label}</p>
-                    <p className={`font-bold ${item.highlight ? 'text-white text-lg' : 'text-purple-300'}`}>
+                  <div className="flex flex-col justify-center flex-1">
+                    <p className="text-sm text-purple-200 font-medium">{item.label}</p>
+                    <p className="font-bold text-white text-lg mt-1">
                       {item.date}
                     </p>
                   </div>

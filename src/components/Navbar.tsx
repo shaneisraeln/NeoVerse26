@@ -32,8 +32,8 @@ export default function Navbar() {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled 
-        ? 'bg-black/80 backdrop-blur-xl border-b border-purple-500/30 shadow-[0_0_30px_rgba(0,0,0,0.5)]' 
-        : 'bg-black/40 backdrop-blur-md border-b border-purple-500/20'
+        ? 'bg-black border-b border-purple-500/50 shadow-[0_0_30px_rgba(168,85,247,0.3)]' 
+        : 'bg-black border-b border-purple-500/40'
     }`}>
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group">
@@ -62,11 +62,11 @@ export default function Navbar() {
               About
             </a>
             <a 
-              href="#tracks" 
-              onClick={(e) => scrollToSection(e, 'tracks')}
+              href="#prizes" 
+              onClick={(e) => scrollToSection(e, 'prizes')}
               className="text-purple-200 hover:text-white transition-colors font-medium"
             >
-              Tracks
+              Prizes
             </a>
             <a 
               href="#journey" 

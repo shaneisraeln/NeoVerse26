@@ -2,9 +2,9 @@ import { Lightbulb, Rocket, Users, Zap, Trophy, Code } from 'lucide-react';
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 px-6 bg-transparent">
+    <section id="about" className="min-h-screen flex items-center justify-center py-20 px-6 bg-transparent">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2 className="text-5xl md:text-6xl font-black text-white mb-6 drop-shadow-[0_0_30px_rgba(168,85,247,0.5)]">
             About NeoVerse 26
           </h2>

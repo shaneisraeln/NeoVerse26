@@ -3,33 +3,19 @@ import { Phone, Mail, User } from 'lucide-react';
 export default function ContactsSection() {
   const contacts = [
     {
-      name: 'Rajesh Kumar',
-      role: 'Event Coordinator',
-      phone: '+91 98765 43210',
-      email: 'rajesh@cit.edu.in'
+      name: 'Nikhil',
+      role: 'Secretary',
+      phone: '+91 91489 35974'
     },
     {
-      name: 'Arjun Patel',
-      role: 'Technical Lead',
-      phone: '+91 98765 43211',
-      email: 'arjun@cit.edu.in'
-    },
-    {
-      name: 'Vikram Singh',
-      role: 'Sponsorship Head',
-      phone: '+91 98765 43212',
-      email: 'vikram@cit.edu.in'
-    },
-    {
-      name: 'Karthik Menon',
-      role: 'Operations Manager',
-      phone: '+91 98765 43213',
-      email: 'karthik@cit.edu.in'
+      name: 'Kavi Selvan',
+      role: 'Join Secretary',
+      phone: '+91 81227 97144'
     }
   ];
 
   return (
-    <section className="py-20 px-6 bg-transparent">
+    <section className="min-h-screen flex items-center justify-center py-20 px-6 bg-transparent">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-5xl md:text-6xl font-black text-white mb-6 drop-shadow-[0_0_30px_rgba(168,85,247,0.5)]">
@@ -61,13 +47,6 @@ export default function ContactsSection() {
                 >
                   <Phone className="w-4 h-4" />
                   <span>{contact.phone}</span>
-                </a>
-                <a 
-                  href={`mailto:${contact.email}`}
-                  className="flex items-center gap-2 text-sm text-purple-100 hover:text-white transition-colors break-all"
-                >
-                  <Mail className="w-4 h-4 flex-shrink-0" />
-                  <span>{contact.email}</span>
                 </a>
               </div>
             </div>

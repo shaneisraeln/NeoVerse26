@@ -1,4 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import titleSponsorImg from '../assets/sponsors/titlesponsor.jpeg';
+import internSponsorImg from '../assets/sponsors/InternshipSponsor.jpeg';
+import bronzeSponsorImg from '../assets/sponsors/bronze-sponsor.jpeg';
+import wellWisher1Img from '../assets/sponsors/wellwisher-1.jpeg';
+import wellWisher2Img from '../assets/sponsors/wellwisher-2.png';
 
 interface Sponsor {
   id: string;
@@ -16,65 +21,34 @@ interface SponsorData {
 export default function SponsorShowcase() {
   const defaultSponsors: SponsorData = {
     title: [
-      { id: '1', name: 'SurveySparrow', logo: 'https://surveysparrow.com/wp-content/uploads/2023/08/surveysparrow-logo.svg' }
+      { id: '1', name: 'Title Sponsor', logo: titleSponsorImg }
     ],
     internship: [
-      { id: '2', name: 'TechCorp', logo: 'https://img.icons8.com/color/96/google-logo.png' }
+      { id: '2', name: 'Internship Sponsor', logo: internSponsorImg }
     ],
     bronze: [
-      { id: '3', name: 'StartupXYZ', logo: 'https://img.icons8.com/color/96/amazon.png' }
+      { id: '3', name: 'Bronze Sponsor', logo: bronzeSponsorImg }
     ],
     wellWisher: [
-      { id: '4', name: 'Company A', logo: 'https://img.icons8.com/color/96/github.png' },
-      { id: '5', name: 'Company B', logo: 'https://img.icons8.com/color/96/discord-logo.png' }
+      { id: '4', name: 'Well Wisher', logo: wellWisher1Img },
+      { id: '5', name: 'Well Wisher', logo: wellWisher2Img }
     ]
   };
 
-  const [sponsorTiers, setSponsorTiers] = useState<SponsorData>(defaultSponsors);
-
-  useEffect(() => {
-    const savedData = localStorage.getItem('sponsorData');
-    if (savedData) {
-      try {
-        const parsed = JSON.parse(savedData);
-        // Map old structure to new if needed
-        if (parsed.gold) {
-          setSponsorTiers({
-            title: parsed.gold || [],
-            internship: parsed.silver || [],
-            bronze: parsed.bronze || [],
-            wellWisher: parsed.wellWisher || []
-          });
-        } else {
-          setSponsorTiers(parsed);
-        }
-      } catch (e) {
-        setSponsorTiers(defaultSponsors);
-      }
-    }
-  }, []);
+  const [sponsorTiers] = useState<SponsorData>(defaultSponsors);
 
   const TitleSponsor = ({ sponsor }: { sponsor: Sponsor }) => (
     <div className="mb-16">
-      <h3 className="text-3xl font-bold text-center mb-8" style={{ color: '#FFD700' }}>
+      <h3 className="text-3xl font-bold text-center mb-8 text-purple-400">
         Title Sponsor
       </h3>
-      <div className="max-w-md mx-auto">
-        <div className="group bg-gradient-to-br from-yellow-500/10 to-orange-500/10 backdrop-blur-md border-4 border-yellow-500/50 rounded-lg p-12 hover:border-yellow-400/80 hover:shadow-[0_0_60px_rgba(251,191,36,0.6)] transition-all duration-300 hover:-translate-y-2 flex items-center justify-center min-h-[200px]">
-          <div style={{ width: '200px', height: '100px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <img 
-              src={sponsor.logo} 
-              alt={sponsor.name}
-              style={{ 
-                maxWidth: '200px', 
-                maxHeight: '100px', 
-                width: 'auto', 
-                height: 'auto', 
-                objectFit: 'contain' 
-              }}
-              className="grayscale-0 group-hover:grayscale-0 transition-all"
-            />
-          </div>
+      <div className="flex justify-center">
+        <div className="bg-white/5 backdrop-blur-md border-2 border-purple-500/40 rounded-lg p-8 hover:border-purple-400/60 hover:shadow-[0_0_40px_rgba(168,85,247,0.4)] transition-all duration-300 inline-block">
+          <img 
+            src={sponsor.logo} 
+            alt={sponsor.name}
+            className="h-28 w-auto object-contain"
+          />
         </div>
       </div>
     </div>
@@ -84,57 +58,43 @@ export default function SponsorShowcase() {
     title, 
     sponsors, 
     tierColor,
-    logoSize = 'medium'
+    columns = 1,
+    imageSize = 'h-16'
   }: { 
     title: string; 
     sponsors: Sponsor[]; 
     tierColor: string;
-    logoSize?: 'large' | 'medium' | 'small';
+    columns?: number;
+    imageSize?: string;
   }) => {
     if (sponsors.length === 0) return null;
 
-    const sizeClasses = {
-      large: { width: '150px', height: '75px', maxW: '150px', maxH: '75px' },
-      medium: { width: '120px', height: '60px', maxW: '120px', maxH: '60px' },
-      small: { width: '80px', height: '40px', maxW: '80px', maxH: '40px' }
-    };
-
-    const size = sizeClasses[logoSize];
-    const gridCols = logoSize === 'small' ? 'grid-cols-2 md:grid-cols-4' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3';
+    const gridClass = columns === 2 ? 'grid-cols-2' : 'grid-cols-1';
 
     return (
-      <div className="mb-12">
+      <div className="mb-16">
         <h3 className="text-2xl font-bold text-center mb-8" style={{ color: tierColor }}>
           {title}
         </h3>
-        <div className={`grid ${gridCols} gap-6 max-w-5xl mx-auto`}>
+        <div className={`grid ${gridClass} gap-6 max-w-2xl mx-auto`}>
           {sponsors.map((sponsor) => (
             <div
               key={sponsor.id}
-              className="group bg-white/5 backdrop-blur-md border-2 border-purple-500/40 rounded-lg p-6 hover:border-purple-400/80 hover:bg-white/10 hover:shadow-[0_0_40px_rgba(168,85,247,0.4)] transition-all duration-300 hover:-translate-y-2 flex items-center justify-center min-h-[120px]"
+              className="bg-white/5 backdrop-blur-md border-2 border-purple-500/40 rounded-lg p-8 hover:border-purple-400/60 hover:bg-white/10 hover:shadow-[0_0_40px_rgba(168,85,247,0.4)] transition-all duration-300 flex items-center justify-center"
             >
-              <div style={{ width: size.width, height: size.height, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <img 
-                  src={sponsor.logo} 
-                  alt={sponsor.name}
-                  style={{ 
-                    maxWidth: size.maxW, 
-                    maxHeight: size.maxH, 
-                    width: 'auto', 
-                    height: 'auto', 
-                    objectFit: 'contain' 
-                  }}
-                  className="grayscale group-hover:grayscale-0 opacity-80 group-hover:opacity-100 transition-all"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                    const parent = target.parentElement;
-                    if (parent) {
-                      parent.innerHTML = `<span class="text-white font-bold text-sm">${sponsor.name}</span>`;
-                    }
-                  }}
-                />
-              </div>
+              <img 
+                src={sponsor.logo} 
+                alt={sponsor.name}
+                className={`${imageSize} w-auto object-contain max-w-full`}
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  const parent = target.parentElement;
+                  if (parent) {
+                    parent.innerHTML = `<span class="text-white font-bold text-sm">${sponsor.name}</span>`;
+                  }
+                }}
+              />
             </div>
           ))}
         </div>
@@ -161,21 +121,24 @@ export default function SponsorShowcase() {
           title="Internship Offer Sponsor" 
           sponsors={sponsorTiers.internship} 
           tierColor="#4FC3F7"
-          logoSize="large"
+          columns={1}
+          imageSize="h-24"
         />
         
         <TierSection 
           title="Bronze Sponsor" 
           sponsors={sponsorTiers.bronze} 
           tierColor="#CD7F32"
-          logoSize="medium"
+          columns={1}
+          imageSize="h-20"
         />
         
         <TierSection 
           title="Well Wishers" 
           sponsors={sponsorTiers.wellWisher} 
           tierColor="#8b5cf6"
-          logoSize="small"
+          columns={2}
+          imageSize="h-16"
         />
       </div>
     </section>

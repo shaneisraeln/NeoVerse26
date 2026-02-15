@@ -1,14 +1,14 @@
 export default function PrizePoolSection() {
   return (
-    <section id="prizes" className="py-24 px-6 bg-transparent">
+    <section id="prizes" className="min-h-screen flex items-center justify-center py-20 px-6 bg-transparent">
       <div className="max-w-7xl mx-auto">
         {/* Title */}
-        <div className="text-center mb-32">
+        <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-black text-white uppercase tracking-wider drop-shadow-[0_0_30px_rgba(255,255,255,0.3)] mb-6">
             PRIZE POOL
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-6 shadow-[0_0_20px_rgba(168,85,247,0.6)]"></div>
-          <p className="text-lg text-purple-100 mb-16">💰 Total worth ₹30,000</p>
+          <p className="text-lg text-purple-100 mb-16">Total worth ₹30,000</p>
         </div>
 
         {/* Prize Cards - All Same Size */}
