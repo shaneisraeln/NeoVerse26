@@ -14,27 +14,7 @@ export default function PrizePoolSection() {
         {/* Prize Cards - All Same Size */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           
-          {/* 2nd Place - Runner Up (LEFT) */}
-          <div className="w-full">
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 text-center hover:border-white/20 transition-all duration-300">
-              {/* Emoji Icon */}
-              <div className="text-7xl mb-6">
-                🥈
-              </div>
-
-              {/* Title */}
-              <h3 className="text-white text-3xl font-black mb-6 uppercase">
-                Runner Up
-              </h3>
-
-              {/* Amount */}
-              <p className="text-6xl font-black text-white">
-                ₹10,000
-              </p>
-            </div>
-          </div>
-
-          {/* 1st Place - Winner (CENTER) */}
+          {/* 1st Place - Winner (LEFT) */}
           <div className="w-full">
             <div className="bg-white/5 backdrop-blur-sm border-2 border-purple-500/40 rounded-2xl p-8 text-center hover:border-purple-400/60 transition-all duration-300 shadow-xl">
               {/* Emoji Icon */}
@@ -50,6 +30,26 @@ export default function PrizePoolSection() {
               {/* Amount */}
               <p className="text-6xl font-black text-white">
                 ₹15,000
+              </p>
+            </div>
+          </div>
+
+          {/* 2nd Place - Runner Up (CENTER) */}
+          <div className="w-full">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 text-center hover:border-white/20 transition-all duration-300">
+              {/* Emoji Icon */}
+              <div className="text-7xl mb-6">
+                🥈
+              </div>
+
+              {/* Title */}
+              <h3 className="text-white text-3xl font-black mb-6 uppercase">
+                Runner Up
+              </h3>
+
+              {/* Amount */}
+              <p className="text-6xl font-black text-white">
+                ₹10,000
               </p>
             </div>
           </div>
