@@ -8,7 +8,7 @@ export default function PrizePoolSection() {
             PRIZE POOL
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-6 shadow-[0_0_20px_rgba(168,85,247,0.6)]"></div>
-          <p className="text-lg text-purple-100 mb-16">Total worth ₹30,000</p>
+          <p className="text-lg text-purple-100 mb-16">💰 Total worth ₹30,000</p>
         </div>
 
         {/* Prize Cards - All Same Size */}
