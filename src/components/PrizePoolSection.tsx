@@ -1,104 +1,79 @@
-import { Trophy, Award, Medal } from 'lucide-react';
-
 export default function PrizePoolSection() {
   return (
-    <section id="prizes" className="py-20 px-6 bg-transparent">
-      <div className="max-w-6xl mx-auto">
-
+    <section id="prizes" className="py-24 px-6 bg-transparent">
+      <div className="max-w-7xl mx-auto">
         {/* Title */}
-        <div className="text-center mb-16">
-          <h2 className="text-6xl md:text-7xl font-black text-white mb-8 drop-shadow-[0_0_30px_rgba(255,255,255,0.7)] uppercase tracking-wider">
+        <div className="text-center mb-32">
+          <h2 className="text-5xl md:text-6xl font-black text-white uppercase tracking-wider drop-shadow-[0_0_30px_rgba(255,255,255,0.3)] mb-6">
             PRIZE POOL
           </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-6 shadow-[0_0_20px_rgba(168,85,247,0.6)]"></div>
+          <p className="text-lg text-purple-100 mb-16">Total worth ₹30,000</p>
         </div>
 
-        {/* Podium */}
-        <div className="flex items-end justify-center gap-4 md:gap-8 max-w-5xl mx-auto mb-12">
-
-          {/* SILVER */}
-          <div className="flex-1 max-w-xs">
-            <div className="bg-gradient-to-br from-gray-300/80 to-gray-400/60 backdrop-blur-md border-2 border-gray-200 rounded-t-lg p-6 text-center shadow-[0_0_40px_rgba(192,192,192,0.9)]">
-
-              <div className="w-16 h-16 bg-gradient-to-br from-gray-100 to-gray-300 rounded-full flex items-center justify-center mx-auto mb-4 shadow-[0_0_40px_rgba(192,192,192,1)]">
-                <Award className="w-8 h-8 text-white" />
+        {/* Prize Cards - All Same Size */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          
+          {/* 2nd Place - Runner Up (LEFT) */}
+          <div className="w-full">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 text-center hover:border-white/20 transition-all duration-300">
+              {/* Emoji Icon */}
+              <div className="text-7xl mb-6">
+                🥈
               </div>
 
-              <p className="text-base text-white font-black mb-3 uppercase tracking-widest">
-                RUNNER UP
-              </p>
+              {/* Title */}
+              <h3 className="text-white text-3xl font-black mb-6 uppercase">
+                Runner Up
+              </h3>
 
-              {/* SILVER AMOUNT */}
-              <p className="text-4xl md:text-5xl font-black text-gray-100 drop-shadow-[0_0_25px_rgba(192,192,192,1)]">
+              {/* Amount */}
+              <p className="text-6xl font-black text-white">
                 ₹10,000
               </p>
-
             </div>
-
-            <div className="h-24 bg-gradient-to-b from-gray-200/40 to-gray-400/20 border-x-2 border-b-2 border-gray-200 rounded-b-lg"></div>
           </div>
 
-
-          {/* GOLD */}
-          <div className="flex-1 max-w-xs">
-            <div className="bg-gradient-to-br from-yellow-400/80 to-amber-500/60 backdrop-blur-md border-2 border-yellow-200 rounded-t-lg p-8 text-center shadow-[0_0_60px_rgba(255,215,0,0.9)]">
-
-              <div className="w-20 h-20 bg-gradient-to-br from-yellow-100 to-yellow-300 rounded-full flex items-center justify-center mx-auto mb-4 shadow-[0_0_60px_rgba(255,215,0,1)]">
-                <Trophy className="w-10 h-10 text-white" />
+          {/* 1st Place - Winner (CENTER) */}
+          <div className="w-full">
+            <div className="bg-white/5 backdrop-blur-sm border-2 border-purple-500/40 rounded-2xl p-8 text-center hover:border-purple-400/60 transition-all duration-300 shadow-xl">
+              {/* Emoji Icon */}
+              <div className="text-7xl mb-6">
+                🏆
               </div>
 
-              <p className="text-lg text-white font-black mb-3 uppercase tracking-widest">
-                CHAMPION
-              </p>
+              {/* Title */}
+              <h3 className="text-white text-3xl font-black mb-6 uppercase">
+                Winner
+              </h3>
 
-              {/* GOLD AMOUNT */}
-              <p className="text-5xl md:text-6xl font-black text-yellow-100 drop-shadow-[0_0_40px_rgba(255,215,0,1)]">
+              {/* Amount */}
+              <p className="text-6xl font-black text-white">
                 ₹15,000
               </p>
-
             </div>
-
-            <div className="h-40 bg-gradient-to-b from-yellow-200/40 to-amber-300/20 border-x-2 border-b-2 border-yellow-200 rounded-b-lg"></div>
           </div>
 
-
-          {/* BRONZE */}
-          <div className="flex-1 max-w-xs">
-            <div className="bg-gradient-to-br from-orange-700/80 to-orange-600/60 backdrop-blur-md border-2 border-orange-300 rounded-t-lg p-6 text-center shadow-[0_0_50px_rgba(205,127,50,0.9)]">
-
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-200 to-orange-400 rounded-full flex items-center justify-center mx-auto mb-4 shadow-[0_0_50px_rgba(205,127,50,1)]">
-                <Medal className="w-8 h-8 text-white" />
+          {/* 3rd Place - 2nd Runner Up (RIGHT) */}
+          <div className="w-full">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 text-center hover:border-white/20 transition-all duration-300">
+              {/* Emoji Icon */}
+              <div className="text-7xl mb-6">
+                🥉
               </div>
 
-              <p className="text-base text-white font-black mb-3 uppercase tracking-widest">
-                2ND RUNNER UP
-              </p>
+              {/* Title */}
+              <h3 className="text-white text-3xl font-black mb-6 uppercase">
+                2nd Runner Up
+              </h3>
 
-              {/* BRONZE AMOUNT */}
-              <p className="text-4xl md:text-5xl font-black text-orange-100 drop-shadow-[0_0_30px_rgba(205,127,50,1)]">
+              {/* Amount */}
+              <p className="text-6xl font-black text-white">
                 ₹5,000
               </p>
-
             </div>
-
-            <div className="h-16 bg-gradient-to-b from-orange-300/40 to-orange-500/20 border-x-2 border-b-2 border-orange-300 rounded-b-lg"></div>
           </div>
-
         </div>
-
-
-        {/* Bottom Text */}
-        <div className="text-center space-y-4 mt-12">
-
-          <p className="text-white text-lg font-medium tracking-wide">
-            Plus exciting swag, certificates, workshops, and networking opportunities!
-          </p>
-
-          <p className="text-yellow-300 text-xl font-black drop-shadow-[0_0_15px_rgba(251,191,36,0.9)] uppercase tracking-wide">
-            🎯 Internship opportunities available for outstanding performers!
-          </p>
-
-        </div>
-
       </div>
     </section>
   );
