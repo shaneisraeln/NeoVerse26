@@ -9,7 +9,7 @@ export default function ContactsSection() {
     },
     {
       name: 'Kavi Selvan',
-      role: 'Join Secretary',
+      role: 'Joint Secretary',
       phone: '+91 81227 97144'
     }
   ];
