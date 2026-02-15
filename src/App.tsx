@@ -1,15 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
-import SponsorsPage from './pages/SponsorsPage';
-import AdminPage from './pages/AdminPage';
+import GalleryAdminPage from './pages/GalleryAdminPage';
 
 export default function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/sponsors" element={<SponsorsPage />} />
-        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/admin/gallery" element={<GalleryAdminPage />} />
       </Routes>
     </Router>
   );

@@ -13,7 +13,7 @@ export default function Footer() {
                 26
               </span>
             </div>
-            <p className="text-gray-400">
+            <p className="text-white/80">
               A National Level Hackathon organized by Student Developers Cell, CIT
             </p>
           </div>
@@ -29,7 +29,7 @@ export default function Footer() {
                     href="https://maps.app.goo.gl/oXDPwZKL2MhkWShR9" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-gray-400 text-sm hover:text-purple-300 transition-colors underline"
+                    className="text-white/80 text-sm hover:text-purple-300 transition-colors underline"
                   >
                     Coimbatore Institute of Technology<br />
                     Coimbatore, Tamil Nadu
@@ -45,13 +45,13 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-blue-400" />
-                <a href="mailto:genesis@pce.ac.in" className="text-gray-400 hover:text-white transition-colors text-sm">
+                <a href="mailto:genesis@pce.ac.in" className="text-white/80 hover:text-white transition-colors text-sm">
                   sdc@cit.edu.in
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-purple-400" />
-                <a href="tel:+919876543210" className="text-gray-400 hover:text-white transition-colors text-sm">
+                <a href="tel:+919876543210" className="text-white/80 hover:text-white transition-colors text-sm">
                   +91 91489 35974
                 </a>
               </div>
@@ -60,7 +60,7 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 border-t border-gray-800 text-center">
-          <p className="text-gray-400 text-sm">
+          <p className="text-white/60 text-sm">
             © 2025 NeoVerse 26 All rights reserved. | Developed with 💜 by SDC, CIT
           </p>
         </div>
