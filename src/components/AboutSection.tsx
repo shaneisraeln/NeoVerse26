@@ -1,4 +1,4 @@
-import { Lightbulb, Rocket, Users, Zap, Trophy, Code } from 'lucide-react';
+import { Lightbulb, Rocket, Users, Zap, Trophy, Code, Briefcase } from 'lucide-react';
 
 export default function AboutSection() {
   return (
@@ -26,6 +26,35 @@ export default function AboutSection() {
             <div className="pt-4">
               <p className="text-purple-200 font-semibold text-xl">
                 Join us for 24 hours of hacking, learning, and building the future.
+              </p>
+            </div>
+          </div>
+
+          {/* Highlight Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 max-w-4xl mx-auto">
+            {/* Internship Opportunity Card */}
+            <div className="bg-white/5 backdrop-blur-md border-2 border-purple-500/40 rounded-lg p-6 hover:border-purple-400/80 hover:bg-white/10 hover:shadow-[0_0_40px_rgba(168,85,247,0.4)] transition-all duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(168,85,247,0.6)]">
+                  <Briefcase className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white">Internship Opportunities</h3>
+              </div>
+              <p className="text-purple-100 leading-relaxed">
+                Top performers will get exclusive internships or interview opportunities from our partners. Turn your hackathon success into career advancement!
+              </p>
+            </div>
+
+            {/* Additional Perks Card */}
+            <div className="bg-white/5 backdrop-blur-md border-2 border-purple-500/40 rounded-lg p-6 hover:border-purple-400/80 hover:bg-white/10 hover:shadow-[0_0_40px_rgba(168,85,247,0.4)] transition-all duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(168,85,247,0.6)]">
+                  <Trophy className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white">Additional Perks</h3>
+              </div>
+              <p className="text-purple-100 leading-relaxed">
+                Earn certificates of participation, connect with industry professionals, and expand your network with fellow innovators and mentors throughout the event.
               </p>
             </div>
           </div>
