@@ -41,7 +41,7 @@ export default function AboutSection() {
                 <h3 className="text-xl font-bold text-white">Internship Opportunities</h3>
               </div>
               <p className="text-purple-100 leading-relaxed">
-                Top performers will get exclusive *internships or interview opportunities from our partners. Turn your hackathon success into career advancement!
+                Top performers will get exclusive interview opportunities from our partners. Turn your hackathon success into career advancement! *Opportunities will be based on performance.
               </p>
             </div>
 
